@@ -17,6 +17,18 @@ namespace template_csharp_loops
 
             // SOLUTION HERE
 
+            for(int i = 5; i > 0; i--)
+            {
+                Console.WriteLine(i);
+            }
+
+            //int i = 5;
+            //while (i >= 1)
+            //{
+            //    Console.WriteLine(i);
+            //    i--;
+            //}
+
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
         }
@@ -31,6 +43,14 @@ namespace template_csharp_loops
             Console.WriteLine("REVERSE COUNTING\n");
 
             // SOLUTION HERE
+            Console.WriteLine("Enter a number between 1-20");
+            int userInput = Int32.Parse(Console.ReadLine());
+
+            while (userInput >= 1 && userInput <= 20)
+            {
+                Console.WriteLine(userInput);
+                userInput--;
+            }
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -44,6 +64,19 @@ namespace template_csharp_loops
             Console.WriteLine("PRINT THE SQUARE OF EVEN NUMBERS\n");
 
             // SOLUTION HERE
+            
+            for(int i = 1; i < 10; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(i * i);
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+
+            }
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -59,12 +92,23 @@ namespace template_csharp_loops
             Console.Clear();
             Console.WriteLine("GUESS THE MAGIC NUMBER\n");
 
-            int userInput = Convert.ToInt32(Console.ReadLine());
 
             // This reads the user's input and converts it to an integer.
             // We'll assume that users can only input integers.
             // SOLUTION HERE
-
+            while(true)
+            {
+                int userInput = Int32.Parse(Console.ReadLine());              
+                if (userInput % 3 != 0)
+                {
+                    Console.WriteLine("Try Again");
+                }
+                else if (userInput % 3 == 0)                        //how to not use break?
+                {
+                    Console.WriteLine("You Won!");
+                    break;
+                }
+            }
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
         }
